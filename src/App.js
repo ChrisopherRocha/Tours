@@ -9,6 +9,12 @@ function App() {
 
   const url = "https://course-api.com/react-tours-project"
 
+  const removeTour = (id) => {
+    const newTour = tours.filter((tour) => tour.id !== id)
+    setTours(newTour)
+  }
+
+
   const fetchTours = async () => {
     setIsLoading(true);
     try {
@@ -37,7 +43,7 @@ function App() {
     <>
       <h1>Tours Project</h1>
       <main>
-        <Tours tours={tours} />
+        <Tours tours={tours} removeTour={removeTour} />
       </main>
     </>
   );
