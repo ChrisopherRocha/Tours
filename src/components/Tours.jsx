@@ -10,6 +10,7 @@ function Tours({ tours }) {
         </div>
         <div className='tours'>
             {tours.map((tour) => {
+                console.log(tour)
                 return (
                     <Tour key={tour.id} {...tour} />
                 )
